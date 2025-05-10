@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function findsQuare(){
+            let num = prompt("Enter num");
+            if(num > 0){
+                let square= num*num;
+                alert(square);
+            }
+            else{
+                alert("Num is negative");
+            }
+            
+        }
+        function findResult(){
+            let Maths=prompt("Enter Maths marks");
+            let phy=prompt("Enter physic marks");
+            let chem=prompt("Enter chem marks");
+            Maths = Number(Maths);
+            phy = Number(phy);
+            chem= Number(chem);
+            let total = Maths + phy + chem;
+            let avg = total/3;
+            alert(total);
+            alert(avg);
+            if(avg>85){
+                alert("first class");
+            }
+            else if(avg >= 75 && avg <=85){
+                alert("sec class");
+            }
+            else if(avg >65 && avg <=55){
+                alert("third class")
+            }
+            else{
+                alert("fail");
+            }
+
+        }
+        function calc(){
+            let num1 = (Number)( document.getElementById("num1").value);
+            let num2 = (Number)( document.getElementById("num2").value);
+            let op = document.getElementById("op").value;
+            switch(op){
+                case '+':
+                    alert(`addition= ${num1 + num2}`);
+                break; 
+                case '-':
+                    alert(`sub = ${num1 - num2}`);
+                break; 
+                case '*':
+                    alert(`mul= ${num1 * num2}`);
+                break; 
+                case '/':
+                    alert(`div= ${num1 / num2}`);
+                break; 
+                default:
+                    alert("wrong choice");
+                break;       
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="findsQuare()">FindSquare</button>
+    <button onclick="findResult()">findResult</button>
+  <fieldset>
+    <legend>Simple Calc</legend>
+      <label for="">Enter Num1</label>
+      <input type="text" id="num1">
+      <br><br>
+      <label for="">Enter Num2</label>
+      <input type="text" id="num2">
+      <br><br>
+      <label for="">Enter Operator(+,-,*,/)</label>
+      <input type="text" name="" id="op">
+      <input type="submit" value="submit" onclick="calc()">
+  </fieldset>
+</body>
+</html>

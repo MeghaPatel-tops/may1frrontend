@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         //(?:) conditional operator
+                /*
+                TAsk list for student
+                find num is positive or negative
+                find year leap or not 
+                find person is elgible for voting or not
+
+                */
+            function checkEvenOdd(){
+                let num= prompt("Enter num");
+               
+                let str=(num%2==0)?"Num is even":"Num is odd";
+                alert(str);
+
+            }
+            //Nullish coalescing operator '??'
+            let age=90;
+            //(age)?age:0
+            alert(age??0);
+    </script>
+</head>
+<body>
+    <button onclick="checkEvenOdd()">
+        checkEvenOdd
+    </button>
+</body>
+</html>

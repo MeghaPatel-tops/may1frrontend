@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //basic function
+        function printFunction(){
+            console.log("Tops tech");    
+        }
+
+        printFunction();
+        //function with parmeter
+        function calc(a,b,c=0){
+            let str=`addition = ${a+b+c} <br>
+                    sub= ${a-b} <br>
+                    mul= ${a*b} <br>
+                    div= ${a/b} <br>`;
+            document.write(str);
+                    
+        }
+
+        calc(12,4,3);
+        calc(12.4,2.2);
+        //function returning value
+        function square(num){
+            return num*num;
+        }
+        let sq= square(13);
+        console.log(`13 aq=${sq}`);
+        
+        console.log(square(12));
+        
+    </script>
+</head>
+<body>
+    <h1>Basic Function code</h1>
+</body>
+</html>

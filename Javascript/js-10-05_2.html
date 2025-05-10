@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Global or Outer varible
+        let pi=3.14;
+        let name ="Jhon";
+        function namePrint(){
+            let email="jhon|@gmail.com";//local varible
+            console.log(name);  
+        }
+        //console.log(email); =>Genrate Error not Declare
+        
+        function add(a,b,c=0){
+            let add = a+b+c;
+            console.log(`addition=${add}`);
+        }
+        add(1,2,3);
+        add(12,34);
+
+        namePrint();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
