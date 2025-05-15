@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let fruits = ["apple","banana","kiwi"];
+
+        console.log(fruits);
+
+        //add element at end
+        fruits.push("mango");
+
+        console.log(fruits);
+
+        //remove an element from end
+        fruits.pop();
+
+        console.log(fruits);
+
+        //add an Element to the starting of array
+        fruits.unshift("graps");
+
+        console.log(fruits);
+
+         //remove an Element from the starting of array
+        fruits.shift();
+
+         console.log(fruits);
+
+         //delete an Element from the array
+
+         //delete fruits[1];
+
+         fruits.splice(1,1);
+         console.log(fruits);
+
+        //  The splice method is also able to insert the elements without any removals. For that, we need to set deleteCount to 0:
+
+        fruits.splice(2,0,"Dragonfruit","mango");
+         console.log(fruits);
+
+        fruits.splice(1,1,"watermallon");
+        console.log(fruits);
+
+
+        
+         function genNav(){
+            let tabllist = ["Home","About us","Gallary","Team"];
+            str="";
+            for(let i =0;i<tabllist.length;i++){
+                str+=`<li>${tabllist[i]}</li>`;
+            }
+           document.getElementById('tab').innerHTML=str;
+            
+         }
+
+         let matrix =[
+            [1,2,3],
+            [4,5,6],
+            [7,8,9]
+         ];
+
+
+         for(let i=0;i<3;i++){
+            for(let j=0;j<3;j++){
+                str=`matrix[${i}][${j}]=${matrix[i][j]}`;
+                console.log(str)
+            }
+         }
+
+         let choice = ["music","sports","Dance"];
+
+         let choiiceStr = String(choice);
+
+         console.log(choiiceStr);
+         
+
+         
+        
+    </script>
+</head>
+<body>
+    <button onclick="genNav()">
+        Genrate Menu
+    </button>
+    <nav>
+        <ul id="tab"></ul>
+    </nav>
+</body>
+</html>

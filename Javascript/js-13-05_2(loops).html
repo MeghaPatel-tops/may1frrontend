@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            while(condition){
+                //block
+            }
+        */
+        let i=1;//init
+        while(i<=10){//condition
+            console.log(i);
+            i++;//i=i+1; //modification
+        }
+
+        function tableCreate(){
+            let num = prompt("Enter Number");
+            let i=1;
+            let str;
+            while(i<=10){
+                //2 * 1= 2
+                str = `${num} * ${i} = ${num*i}<br>`;
+                document.writeln(str);
+                i++;
+            }
+        }
+        
+        console.log("For loop Example");
+        
+        //for(init;condition;modification){ //block }
+        for(i=20;i>=10;i--){
+            console.log(i);  
+        }
+
+        //Do while
+        /*
+          do{
+                //block
+          }
+            while(conidition);
+
+        */
+        console.log("dowhile loop Example");
+        let k=13;
+        do{
+            console.log(k);
+            k++;
+        }while(k<=10);
+
+    </script>
+</head>
+<body>
+     <button onclick="tableCreate()">Print table</button>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .main{
+            padding: 10px;
+            height: 600px;
+            width: 350px;
+            border:2px solid black;
+            display: flex;
+             align-items: center;
+            justify-content: flex-start;
+             gap: 20px;
+             flex-wrap: wrap;
+        }
+        button{
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="main" id="main">
+        <button>1</button>
+    </div>
+    <script>
+        
+        str="";
+        for(i=1;i<=10;i++){
+            str+=` <button>${i}</button>`;        
+        }
+       document.getElementById("main").innerHTML=str;
+        
+    </script>
+</body>
+
+</html>
