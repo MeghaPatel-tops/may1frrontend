@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let users =[];
+        function createUser(){
+            let uname= document.getElementById('uname').value;
+            let email= document.getElementById('email').value;
+            let contact= document.getElementById('contact').value;
+            let user = {'uname':uname,'email':email,'contact':contact};
+            users.push(user);
+            console.log(users);
+            document.getElementById('uname').value="";
+            document.getElementById('email').value="";
+            contact= document.getElementById('contact').value="";
+            showUser();
+        }
+        //show user function
+        function showUser(){
+            let str="";
+            users.forEach(function(item,index,Users){
+                str+=` <tr>
+                    <td>${item.uname}</td>
+                    <td>${item.email}</td>
+                    <td>${item.contact}</td>
+                    <td><button onclick="delUser(${index})">Delete</button></td>
+                <td><button onclick="editUser(${index})">Edit</button></td>
+                    </tr>`
+            })
+            document.getElementById('userdata').innerHTML=str;
+        }
+        //delete user
+        function delUser(uid){
+            users.splice(uid,1);
+            showUser();
+        }
+        //Edit user
+        function editUser(uid){
+            document.getElementById('uname').value = users[uid].uname;
+            document.getElementById('email').value= users[uid].email;
+            document.getElementById('contact').value= users[uid].contact;
+            document.getElementById('uid').value= uid;
+        }
+        //Update User
+        function updateUser(){
+            let uname= document.getElementById('uname').value;
+            let email= document.getElementById('email').value;
+            let contact= document.getElementById('contact').value;
+            let uid= document.getElementById('uid').value;
+
+            users[uid].uname=uname;
+            users[uid].email=email;
+            users[uid].contact=contact;
+
+            showUser();
+             document.getElementById('uname').value="";
+            document.getElementById('email').value="";
+            contact= document.getElementById('contact').value="";
+            document.getElementById('uid').value="";
+
+        }    
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>User Registration</legend>
+        <label for="">Username</label>
+        <input type="text" name="" id="uname">
+        <br><br><br>
+       <label for="">Email</label>
+        <input type="email" name="" id="email">
+        <br><br><br>
+        <label for="">Contact no</label>
+        <input type="text" name="" id="contact">
+        <br><br><br>
+        <input type="hidden" name="" id="uid">
+        <input type="button" value="Submit" onclick="createUser()">
+         <input type="button" value="Update" onclick="updateUser()">
+    </fieldset>
+    <hr>
+     <fieldset>
+        <legend>User Details</legend>
+        <table border="1" cellpadding="20px">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th colspan="2">Action</th>
+                </tr>
+               
+            </thead>
+            <tbody id="userdata">
+
+            </tbody>
+        </table>
+        
+     </fieldset>   
+</body>
+</html>
