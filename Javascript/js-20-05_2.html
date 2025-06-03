@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function changeStyle(){
+            let para = document.getElementById('para');
+            para.style.backgroundColor="black";
+            para.style.color="white";
+        }
+        function viewFrontend(){
+            let subject = document.querySelectorAll('ul >li:first-child');
+             console.log(subject[0]);
+            str = `<ul><li>HTML</li><li>css</li></ul>`;
+            console.log(str);
+           
+            
+            subject[0].innerHtml = str;
+
+        }
+    </script>
+</head>
+<body>
+    <p id="para">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam amet explicabo architecto ad ea optio ut aut assumenda, porro quos quidem accusantium harum quisquam molestias reprehenderit quis fuga tempora aliquid!
+    </p>
+    <button onclick="changeStyle()">Click here To change style</button>
+    <h1>
+        Subject List
+    </h1>
+    <ul id="subject">
+        <li><button onclick="viewFrontend()">Front-End </button></li>
+    </ul>
+</body>
+</html>

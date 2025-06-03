@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showPassword(){
+            let pass = document.getElementById('pass');
+            pass.setAttribute('type','text');
+        }
+    </script>
+</head>
+<body>
+    <fieldset>
+        <legend>Login Form</legend>
+        <label for="">password</label>
+        <input type="password" name="" id="pass">
+        <br>
+        <input type="checkbox" name="" id="check" onclick="showPassword()">Show Password
+    </fieldset>
+</body>
+</html>

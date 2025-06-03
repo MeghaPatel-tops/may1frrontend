@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .msg{
+            color: red;
+        }
+    </style>
+   
+</head>
+<body>
+    <h1 align="center">From Example</h1>
+    <table align="center" border="1" cellpadding="10px">
+        <form  method="post" id="form1" >
+        <tr>
+            <th>Name:</th>
+            <td><input type="text" name="" id="uname"  size="45" placeholder="Enter NAme">
+            <p id="umsg" class="msg"></p>
+        </td>
+
+            <th>Email:</th>
+            <td><input type="text" name="" id="email" onfocus="userNameValidate()">
+                 <p id="Emailmsg" class="msg"></p>
+            </td>
+           
+        </tr>
+        <tr>
+            <th>Password:</th>
+            <td><input type="password" name="" id="psw" onfocus="checkEmail()">
+            <p class="msg" id="pswMsg"></p>
+            </td>
+            <th>Gender</th>
+            <td>
+                <input type="radio" name="gender" id="gender" value="male">Male
+                <input type="radio" name="gender" id="gender" value="female">Female
+                <p class="msg" id="genMsg"></p>
+            </td>
+        </tr>
+        <tr>
+            <th>Hobby:</th>
+            <td>
+                <input type="checkbox" name="" id="" onclick="CheckGender()">Music
+                <input type="checkbox" name="" id="">Dance
+            </td>
+            <th>city:</th>
+            <td>
+                <select name="" id="">
+                    <option value="">---select---</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Vadodra">Vadodra</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td >
+                <textarea name="" id=""></textarea>
+            </td>
+            <th>DOB</th>
+            <td><input type="datetime-local" name="" id=""></td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+</form>
+ <script>
+
+
+    function userNameValidate(){
+        
+        let uname = document.getElementById('uname');
+        if(uname.value == ""){
+           
+           document.getElementById('umsg').innerHTML="Enter Valid Username";
+            uname.focus();
+            return ;
+        }
+        else{
+             document.getElementById('umsg').innerHTML="";
+        }
+    }
+
+    function validateEmail(email){
+        let Regex=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return Regex.test(email);
+    }
+
+    function checkEmail(){
+         let em= document.getElementById('email');
+         if(em.value == ""){
+            document.getElementById('Emailmsg').innerHTML="Enter valid email";
+            em.focus();
+         }
+         else if(validateEmail(em.value)==false){
+            document.getElementById('Emailmsg').innerHTML="Enter valid email like 'name@gmail.com'";
+            em.focus();
+         }
+         else{
+            document.getElementById('Emailmsg').innerHTML="";
+         }
+    }
+    function CheckGender(){
+        
+        let gender = document.querySelector('input[name="gender"]:checked');
+        if(!gender){
+            document.getElementById('genMsg').innerHTML="select Gender";
+            gender.focus();
+        }
+    }
+
+       
+    //    const form = document.getElementById('form1');
+    // form.addEventListener('submit', function(e) {
+        
+    //     e.preventDefault();
+    //     //Username validation
+        
+
+    //     //Password Validtion
+    //     let psw = document.getElementById('psw');
+    //     if(psw.value == ""){
+    //           document.getElementById('pswMsg').innerHTML="Enter Valid Password";
+    //         psw.focus();
+    //         return ;
+    //     }
+    //     else if(psw.value.length <8){
+    //          document.getElementById('pswMsg').innerHTML=" Enter max char =8";
+    //         psw.focus();
+    //         return ;
+    //     }
+
+    //     //Email Validation 
+    //     let em= document.getElementById('email');
+    //    let flag = validateEmail(em.value);
+    //     if(flag == false){
+    //     document.getElementById('Emailmsg').innerHTML="Enter valid email like 'name@gmail.com'";
+
+    //     }
+    //     alert('Form submission prevented!');
+    // });
+
+    
+    </script>
+</body>
+</html>

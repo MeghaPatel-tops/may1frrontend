@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let product=[
+            {pid:1,pname:"laptop",price:210000},
+            {pid:2,pname:"Mouse",price:210},
+            {pid:3,pname:"Keybord",price:2100},
+            {pid:4,pname:"headphone",price:2100},
+            {pid:5,pname:"LED",price:4000},
+        ];
+
+        let filterArray = product.filter(item=>item.price>2000);
+
+        console.log(filterArray);
+
+        let numarray =[2,3,4,5,6];
+
+        console.log(numarray.reverse());
+        
+
+        let mapArray = numarray.map(function(index,item,numarray){
+              return index*3;
+        });
+
+        console.log(mapArray);
+    
+        //For Numeric Sorting Array
+        function numSort(a,b){
+            if(a>b) return 1;
+            if(a<b) return -1;
+            if(a==b) return 0;
+        }
+
+        let numSortArray = [12,45.1,90,2];
+
+        console.log(numSortArray.sort(numSort));
+
+        let hobby = "music,dance,sports";
+
+        let hobbyArray = hobby.split(",");
+
+        console.log(hobbyArray);
+
+        console.log(hobbyArray.join(","));
+
+
+        let empSalary = [10000,20000,65000,90000];
+
+        let totalSalary = empSalary.reduce((sum,cur)=>sum+cur,0);
+
+        console.log(totalSalary);
+
+        
+        
+
+        
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

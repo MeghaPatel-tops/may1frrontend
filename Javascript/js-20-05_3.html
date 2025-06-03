@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ <style>
+   
+ </style>
+</head>
+<body>
+    <h1>Accessing Elements</h1>
+    <h3>
+        getElementById: Selects an element by its ID attribute.
+    </h3>
+    <p id="onep">
+         getElementById: Selects an element by its ID attribute.
+    </p>
+    <h3>
+        getElementsByClassName: Selects all elements with a specific class name.
+    </h3>
+    <p class="sec">
+        getElementsByClassName: Selects all elements with a specific class name.
+    </p>
+    <h1>
+        Finding HTML Elements by CSS Selectors
+        querySelectorAll();
+
+    </h1>
+    <table cellpadding="10px" border="1" >
+        <tr>
+            <th>Name</th>
+            <th>EMail</th>
+            <th>Contact</th>
+            <th>Address</th>
+        </tr>
+        <tr>
+            <td>Dummy</td>
+            <td>Dummy</td>
+            <td>Dummy</td>
+            <td>Dummy</td>
+        </tr>
+        <tr>
+            <td>Dummy</td>
+            <td>Dummy</td>
+            <td>Dummy</td>
+            <td>Dummy</td>
+        </tr>
+        <tr>
+            <td>Dummy</td>
+            <td>Dummy</td>
+            <td>Dummy</td>
+            <td>Dummy</td>
+        </tr>
+        <tr>
+            <td>Dummy</td>
+            <td>Dummy</td>
+            <td>Dummy</td>
+            <td>Dummy</td>
+        </tr>
+        <tr>
+            <td>Dummy</td>
+            <td>Dummy</td>
+            <td>Dummy</td>
+            <td>Dummy</td>
+        </tr>
+    </table>
+    <fieldset>
+        <legend>Registration</legend>
+        <label for="">Name:</label>
+        <input type="text" name="Uname" id="">
+        <br><br><br>
+        <label for=""></label>
+    </fieldset>
+</body>
+<script>
+    let one = document.getElementById('onep');
+    one.style.backgroundColor="gray";
+    let sec = document.getElementsByClassName('sec');
+    
+    sec[0].style.backgroundColor="red";
+
+    let trArray = document.querySelectorAll('tr:nth-child(even)');
+
+    for(let index of trArray){
+        index.style.backgroundColor="gray";
+    }
+</script>
+</html>
