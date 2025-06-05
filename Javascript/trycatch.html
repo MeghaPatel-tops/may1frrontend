@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function testFunction(){
+            try {
+                let a=10,b=0;
+                if(b==0){
+                    throw new Error("divide by zero exception");
+                }
+                let ans = a/b;
+                console.log("ans="+ans);  
+
+            } catch (error) {
+                console.log("error="+error.message);
+            }
+        }
+
+
+        testFunction();
+        console.log("here");
+
+
+        function testSyntaxError(){
+            try {
+                let a=10;
+                
+                console.log(a);
+                
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        testSyntaxError();
+        
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

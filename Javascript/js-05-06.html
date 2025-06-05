@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addData(){
+            setTimeout(createParagraph,1000);
+        }
+
+        function createParagraph(){
+            document.getElementById('p1').innerHTML="After 1ms data added ";
+        }
+
+        function addData1(){
+             
+                 const newParagraph = document.createElement('p');
+                newParagraph.textContent = 'Every one sec data added';
+    document.getElementById('myDiv').appendChild(newParagraph);
+             
+        }
+
+        setInterval(addData1,1000,1000);
+        
+    </script>
+</head>
+<body>
+    <h1>Settimeout example</h1>
+    <p id="p1"></p>
+    <button onclick="addData()">Click Here</button>
+    <h1>setInterval Example</h1>
+    <div id="myDiv"></div>
+    
+</body>
+</html>

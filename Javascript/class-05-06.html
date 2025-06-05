@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: flex;
+            height: 500px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid black;
+            gap: 20px;
+            padding: 20px;
+        }
+        .card{
+            height: 300px;
+            width: auto;
+            border: 5px solid black;
+            border-radius: 20px;
+            text-align: center;
+        }
+    </style>
+   
+</head>
+<body>
+    <div class="container" id="container">
+       
+        
+    </div>
+</body>
+ <script>
+        class User{
+            constructor(name,email,contact){
+                console.log("constructor method called");
+                this.name=name;
+                this.email=email;
+                this.contact=contact;
+            }
+            showUserDetails(){
+                let str=` <div class="card">
+                    <h1>Name:${this.name}</h1>
+                <h1>email:${this.email}</h1>
+                <h1>Contact:${this.contact}</h1>
+                </div>`;
+                console.log(str);
+                
+                document.getElementById('container').innerHTML=str;
+            }
+            
+        }
+        let u1 = new User("Megha","m@gmail.com","098098908");
+        u1.showUserDetails();
+        let u2 = new User("Malay","m@gmail.com","098098908");
+        u2.showUserDetails();
+    </script>
+</html>
