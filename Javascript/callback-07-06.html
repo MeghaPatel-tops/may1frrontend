@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        .container{
+            width: 80%;
+            border:5px solid black;
+            padding: 10px;
+            height: auto;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .card{
+            height: 300px;
+            width: 200px;
+            border:2px solid black;
+        }
+        .card-image{
+            height: 200px;
+            width: 100%;
+        }
+        .card-image img{
+            height: 150px;
+            width: 150px;
+            margin-left: 0;
+            margin-right: 0;
+            /* display: block; */
+        }
+        .card-title{
+            text-align: center;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="container">
+            
+          
+    </div>
+    
+</body>
+<script type="module">
+   import {createCard} from './comman.js';
+    function getProduct(createCard){
+        fetch('https://fakestoreapi.com/products')
+            .then(response => response.json())
+            .then(data => createCard(data));
+    }
+    
+    getProduct(createCard);
+
+    
+</script>
+</html>
