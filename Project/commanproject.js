@@ -26,3 +26,75 @@
      }
 
      getProduct();
+
+
+     function addUser(){
+        try {
+          const email=document.getElementById('email').value;
+          const user = {
+             uname:document.getElementById('uname').value,
+             email:email,
+             password:document.getElementById('pwd').value,
+             contact:document.getElementById('cnno').value
+
+          }
+          localStorage.setItem('user-'+email, JSON.stringify(user));
+          console.log(user);
+          window.location="login.html";
+          
+        } catch (error) {
+          console.log(error);
+          
+        }
+     }
+
+
+     function login(){
+        const email=document.getElementById('email').value;
+         const password=document.getElementById('pwd').value;
+        if(localStorage.getItem('user-'+email)){
+            user = localStorage.getItem('user-'+email);
+            user= JSON.parse(user);
+            if(password == user.password){
+               alert("Login successfully");
+               localStorage.setItem('sessionUser',JSON.stringify(user));
+               window.location="index.html";
+            }
+                 
+        } 
+        else{
+           alert("Login Fail");
+           document.getElementById('email').value ="";
+          document.getElementById('pwd').value="";
+        }
+     }
+
+    function loading(){
+       if(localStorage.getItem('sessionUser')){
+     
+          let user = localStorage.getItem('sessionUser');
+          user = JSON.parse(user);
+          let str= `<li><a href=""><span class="glyphicon glyphicon glyphicon-user">
+          </span> ${user.uname}</a></li>
+          <li><button onclick='logout()'><span class="glyphicon 	glyphicon glyphicon-off"></button></li>
+          `;
+          
+          document.getElementById('loginItem').innerHTML=str;
+      }
+      else{
+           let str= `<li><a href="login.html">Login
+          </span></a></li>
+         
+          `;
+          
+          document.getElementById('loginItem').innerHTML=str
+      }
+    }
+
+    function logout(){
+         localStorage.removeItem('sessionUser');
+          window.location="index.html";
+    }
+
+    window.onload = loading();
+     
