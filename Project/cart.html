@@ -59,9 +59,19 @@
 </nav>
 
 <div class="container">    
-  <div class="row" id="pdata">
-   
-    
+    <h1>Cart Data</h1>
+  <div class="row" id="cdata">
+     <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Productname</th>
+        <th>price</th>
+        <th>Image</th>
+      </tr>
+      
+    </thead>
+    <tbody id="cartData"></tbody>
+    </table>
   </div>
 </div><br>
 
@@ -75,11 +85,10 @@
   </form>
 </footer>
 <script src="commanproject.js">
-  
 
 </script>
 <script>
-     window.onload = loading();
-    </script>
+    window.onload=getCartData();
+</script>
 </body>
 </html>
